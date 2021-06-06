@@ -1,8 +1,8 @@
 load './Search.rb'
 require './Fridge.rb'
 
-class Menu
-  def self.main
+class Menu_main
+  def self.general_main
     while true
       puts '1. Recipe'
       puts '2. Fridge'
@@ -15,22 +15,22 @@ class Menu
       when '0'
         exit
       when '1'
-        main1
+        main_of_fridge
       when '2'
-        Fridge.menu
+        Fridge.menu_of_fridge
       when '3'
-        Search.menu
+        Search.menu_of_search
       end
     end
   end
 
-  def self.main1
+  def self.main_of_fridge
     while true
       puts '1. Show all'
       puts '2. Search by Name'
       puts '3. Create recipe'
       puts '4. Show Favorites'
-      puts '5. Back'
+      puts '0. Back'
 
       puts 'Enter a number '
       user_inputs = gets.chomp
@@ -50,11 +50,11 @@ class Menu
           end
         end
         RecipeAct.id_from_user
-      when '5'
-        main
+      when '0'
+        general_main
       end
     end
   end
 end
 
-Menu.main
+Menu_main.general_main

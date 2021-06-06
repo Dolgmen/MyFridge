@@ -51,8 +51,7 @@ class RecipeAct
     DATA.all_recipes[recipe_id - 1].show_recipe
     while true
       puts '1. Add to favorites'
-      puts '2. Edit recipe'
-      puts '3. Delete recipe'
+      puts '2. Delete recipe'
       puts '0. Back to main'
       puts ''
       puts 'Enter a number '
@@ -60,16 +59,13 @@ class RecipeAct
       case user_input
       when '1'
         DATA.all_recipes[recipe_id - 1].is_favorite_change
-        DATA.save
+        DATA.save_halper
         puts('Added to favorites')
       when '2'
-        #Має бути метод Recipe який редагує
-        puts('Edited recipe')
-      when '3'
         DATA.delete_from_data
         puts('Delete Recipe')
       when '0'
-        Menu.main
+        Menu_main.general_main
       end
     end
   end
@@ -94,7 +90,7 @@ class RecipeStore
 
   def load_db_file
     begin
-      recipe_list_hash = JSON.parse(MyFile::File_.read(@file_name))
+      recipe_list_hash = JSON.parse(File_::File_Help.read(@file_name))
       recipe_list_hash
     rescue
       recipe_list_hash = {}
@@ -116,23 +112,19 @@ class RecipeStore
     @recipe_list_hash.to_json
   end
 
-  def save
+  def save_halper
     text = list_to_json
-    MyFile::File_.write(@file_name, text)
+    File_::File_Help.write(@file_name, text)
   end
 
   def add_to_data(hash)
     @recipe_list_hash << hash
     hash_to_obj
-    save
+    save_halper
   end
 
   def delete_from_data
-    #Видаляє рецепт з файлика
-  end
 
-  def edit_recipe
-    #Редагування
   end
 
   def hash_to_obj

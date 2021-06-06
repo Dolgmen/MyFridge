@@ -2,10 +2,11 @@ load './Recipe.rb'
 require './Fridge.rb'
 
 class Search
-  def self.menu
+  def self.menu_of_search
     while true
       puts '1. Search by friedge'
       puts '2. Search by ingredients'
+      puts '0. Back'
       puts ''
       puts 'Enter a number '
       user_input = gets.chomp
@@ -16,6 +17,8 @@ class Search
       when '2'
         Search.by(Search.ingredients_input)
         RecipeAct.id_from_user
+      when '0'
+        Menu_main.general_main
       end
     end
   end
