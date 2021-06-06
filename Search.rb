@@ -1,32 +1,21 @@
-
 load './Recipe.rb'
 require './Fridge.rb'
-
 
 class Search
   def self.menu
     while true
       puts '1. Search by friedge'
       puts '2. Search by ingredients'
-      puts '0. Back'
       puts ''
       puts 'Enter a number '
       user_input = gets.chomp
       case user_input
-      when '0'
-        Menu.main
       when '1'
-        Search.by($FRIDGE.ingredients.keys)
-        puts ''
-        puts 'Puts Needed Recipe ID:'
-        recipe_id_input = gets.chomp
-        RecipeAct.with_recipe(recipe_id_input)
+        Search.by(FRIDGE.ingredients.keys)
+        RecipeAct.id_from_user
       when '2'
         Search.by(Search.ingredients_input)
-        puts ''
-        puts 'Puts Needed Recipe ID:'
-        recipe_id_input = gets.chomp
-        RecipeAct.with_recipe(recipe_id_input)
+        RecipeAct.id_from_user
       end
     end
   end
