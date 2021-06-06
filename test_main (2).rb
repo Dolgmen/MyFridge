@@ -2,9 +2,9 @@ require 'json'
 require './file'
 
 class CreateRecipe
-  attr_accessor :reciper, :hiroc
+  attr_accessor :reciper
 
-  def initialize # (rname, name , quantity, description)
+  def initialize 
     @file_name2 = "kupa.json"
   end
 
@@ -15,21 +15,22 @@ class CreateRecipe
     iname =gets.chomp.split(", ")
     puts 'Enter a description of the recipe'
     description = gets.chomp
-    hiroc = { 'name' => rname, 'rname' => iname, 'descrip' => description }
+    hiroc = { 'name': rname, "ingredients": iname, "descrip": description}
+    array= [hiroc]
     File.open("kupa.json", "a") do |file|
-      file.write "#{hiroc} \n "
-      # hiroc +=1
+      file.write "#{array}"
     end
   end
+
 end
 
 
-def save
-  hiroc = to_json
-  MyFile::File_.write(@file_name2, hiroc)
-end
+# def save_halper_recipe
+#   hiroc = to_json
+#   File_::FileHelper.write(@file_name2, hiroc)
+# end
 
-def load
+def load_halper_recipe
   begin
     @reciper = JSON.parse('kupa.json')
   rescue
@@ -38,16 +39,16 @@ def load
 end
 
 
-def append(iname, quantity)
-  if @hiroc.has_key?(iname, quantity)
-    @hiroc[iname, quantity] += [iname, quantity]
-  end
-end
+# def append(iname, quantity)
+#   if @hiroc.has_key?(iname, quantity)
+#     @hiroc[iname, quantity] += [iname, quantity]
+#   end
+# end
 
 def show_recipe
-  puts @reciper = (MyFile::File_.read('kupa.json'))
+  puts @reciper = (File_::FileHelper.read('kupa.json'))
 end
-def main
+def main_menu_of_recipe_add
   while true
     puts '1. Create recipe!'
     puts '2. Show Recipe!'
@@ -68,4 +69,4 @@ end
 # p @reciper = (MyFile::File_.read('kupa.json'))
 CREATE = CreateRecipe.new
 # CREATE.load
-main
+main_menu_of_recipe_add

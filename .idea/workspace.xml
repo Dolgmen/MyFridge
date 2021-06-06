@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d584c74-45fd-4b2f-a939-ec663368bb44" name="Default Changelist" comment="" />
+    <list default="true" id="1d584c74-45fd-4b2f-a939-ec663368bb44" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fridge.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Fridge.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainMenu.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recipe.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Recipe.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Search.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Search.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.rb" beforeDir="false" afterPath="$PROJECT_DIR$/file.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge.json" beforeDir="false" afterPath="$PROJECT_DIR$/fridge.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_main (2).rb" beforeDir="false" afterPath="$PROJECT_DIR$/test_main (2).rb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +47,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -42,10 +58,10 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Ruby.Search">
-    <configuration name="MainMenu (1)" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+  <component name="RunManager" selected="Ruby.test_main (2)">
+    <configuration name="Fridge" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$USER_HOME$/Стільниця/MyFriedge" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
       <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
@@ -57,12 +73,11 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$USER_HOME$/Стільниця/MyFriedge/MainMenu.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/Fridge.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
     <configuration name="MainMenu" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="MyFriedge" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
@@ -80,9 +95,9 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="Recipe (1)" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+    <configuration name="Recipe" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$USER_HOME$/Стільниця/MyFriedge" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
       <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
@@ -94,7 +109,7 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$USER_HOME$/Стільниця/MyFriedge/Recipe.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/Recipe.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
@@ -116,8 +131,7 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="MyFriedge" />
+    <configuration name="test_main (2)" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
@@ -131,17 +145,17 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/test.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/test_main (2).rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Ruby.Search" />
-        <item itemvalue="Ruby.Recipe (1)" />
+        <item itemvalue="Ruby.test_main (2)" />
+        <item itemvalue="Ruby.Recipe" />
         <item itemvalue="Ruby.MainMenu" />
-        <item itemvalue="Ruby.MainMenu (1)" />
-        <item itemvalue="Ruby.test" />
+        <item itemvalue="Ruby.Fridge" />
+        <item itemvalue="Ruby.Search" />
       </list>
     </recent_temporary>
   </component>
@@ -163,23 +177,52 @@
       <workItem from="1621847186978" duration="603000" />
       <workItem from="1621848330082" duration="141000" />
       <workItem from="1621848854283" duration="601000" />
-      <workItem from="1621855297766" duration="558000" />
+      <workItem from="1621855297766" duration="1264000" />
+      <workItem from="1621857682412" duration="1132000" />
+      <workItem from="1621872616936" duration="76000" />
+      <workItem from="1621872707421" duration="364000" />
+      <workItem from="1621873085107" duration="773000" />
+      <workItem from="1621874134385" duration="36000" />
+      <workItem from="1622975788494" duration="15146000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MyFriedge@Fridge.rcov" NAME="Fridge Coverage Results" MODIFIED="1621517188723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
     <SUITE FILE_PATH="coverage/MainMenu_rb@Search.rcov" NAME="Search Coverage Results" MODIFIED="1621774341028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
-    <SUITE FILE_PATH="coverage/MyFriedge@MainMenu.rcov" NAME="MainMenu Coverage Results" MODIFIED="1621522516203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
-    <SUITE FILE_PATH="coverage/MainMenu_rb@Recipe.rcov" NAME="Recipe Coverage Results" MODIFIED="1621777783221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
-    <SUITE FILE_PATH="coverage/MainMenu_rb@test.rcov" NAME="test Coverage Results" MODIFIED="1621790565382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
-    <SUITE FILE_PATH="coverage/MyFriedge@Search.rcov" NAME="Search Coverage Results" MODIFIED="1621252049594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
+    <SUITE FILE_PATH="coverage/test_main__2__rb@Recipe.rcov" NAME="Recipe Coverage Results" MODIFIED="1622987119821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyFriedge@Recipe.rcov" NAME="Recipe Coverage Results" MODIFIED="1621522253636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
     <SUITE FILE_PATH="coverage/MainMenu_rb@MainMenu.rcov" NAME="MainMenu Coverage Results" MODIFIED="1621848429992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
-    <SUITE FILE_PATH="coverage/MainMenu_rb@MainMenu__1_.rcov" NAME="MainMenu (1) Coverage Results" MODIFIED="1621848342169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Стільниця/MyFriedge" MODULE_NAME="MyFriedge" />
     <SUITE FILE_PATH="coverage/MyFriedge@test.rcov" NAME="test Coverage Results" MODIFIED="1621517099784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
+    <SUITE FILE_PATH="coverage/test_main__2__rb@Fridge.rcov" NAME="Fridge Coverage Results" MODIFIED="1622982077728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyFriedge@Fridge.rcov" NAME="Fridge Coverage Results" MODIFIED="1621517188723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
+    <SUITE FILE_PATH="coverage/MyFriedge@MainMenu.rcov" NAME="MainMenu Coverage Results" MODIFIED="1621522516203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
+    <SUITE FILE_PATH="coverage/MainMenu_rb@Recipe.rcov" NAME="Recipe Coverage Results" MODIFIED="1621777783221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
+    <SUITE FILE_PATH="coverage/test_main__2__rb@test_main__2_.rcov" NAME="test_main (2) Coverage Results" MODIFIED="1622990982543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MainMenu_rb@test.rcov" NAME="test Coverage Results" MODIFIED="1621790565382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
+    <SUITE FILE_PATH="coverage/MyFriedge@Search.rcov" NAME="Search Coverage Results" MODIFIED="1621252049594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
+    <SUITE FILE_PATH="coverage/MainMenu_rb@MainMenu__1_.rcov" NAME="MainMenu (1) Coverage Results" MODIFIED="1621848342169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Стільниця/MyFriedge" MODULE_NAME="MyFriedge" />
+    <SUITE FILE_PATH="coverage/test_main__2__rb@Search.rcov" NAME="Search Coverage Results" MODIFIED="1622979806783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/test_main__2__rb@MainMenu.rcov" NAME="MainMenu Coverage Results" MODIFIED="1622986973520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

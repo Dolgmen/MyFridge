@@ -16,6 +16,23 @@ class Recipe
   end
 end
 
+# class CreateRecipe
+#   attr_accessor :reciper
+#
+#   def add_recipe
+#     puts 'Enter name of recipe '
+#     rname = gets.chomp
+#     puts "Enter a name of ingredients with use coma \",\""
+#     iname = gets.chomp.split(", ")
+#     puts 'Enter a description of the recipe'
+#     description = gets.chomp
+#     reciper = { 'name' => rname, 'rname' => iname, 'descrip' => description }
+#     # File.open(@file_name, "a") do |file|
+#     #   file.write "#{hash_of_recipe} \n "
+#     # end
+#   end
+# end
+
 class RecipeAct
   def self.with_recipe(recipe_id)
     recipe_id = recipe_id.to_i
@@ -39,14 +56,14 @@ class RecipeAct
         DATA.delete_from_data
         puts('Delete Recipe')
       when '0'
-        Menu.main
+        Menu_main.general_main
       end
     end
   end
 end
 
 class RecipeStore
-  attr_accessor :all_recipes, :recipe_list_hash
+  attr_accessor :all_recipes, :recipe_list_hash, :reciper
 
   def initialize
     @file_name = 'recipe.json'
@@ -56,7 +73,7 @@ class RecipeStore
 
   def load
     begin
-      recipe_list_hash = JSON.parse(MyFile::File_.read(@file_name))
+      recipe_list_hash = JSON.parse(File_::FileHelper.read(@file_name))
       recipe_list_hash
     rescue
       recipe_list_hash = {}
@@ -65,26 +82,26 @@ class RecipeStore
   end
 
   def obj_to_hash(obj_list)
-  recipe_list_hash = obj_list.map do |object|
-    hash = {}
-    object.instance_variables.each { |var| hash[var.to_s.delete("@")] = object.instance_variable_get(var) }
-     hash
-   end
-  recipe_list_hash
+    recipe_list_hash = obj_list.map do |object|
+      hash = {}
+      object.instance_variables.each { |var| hash[var.to_s.delete("@")] = object.instance_variable_get(var) }
+      hash
+    end
+    recipe_list_hash
   end
 
-  def to_json
+  def hash_to_json
     @recipe_list_hash.to_json
   end
 
-  def save
-    text = to_json
-    MyFile::File_.write(@file_name, text)
+  def save_helper
+    @text = hash_to_json
+    File_::FileHelper.write(@file_name, text)
   end
 
   def add_to_data(hash)
     @recipe_list_hash < hash
-    save
+    save_helper
     hash_to_obj
   end
 
@@ -101,14 +118,29 @@ class RecipeStore
     id = 'id'
     name = 'name'
     ingredients = 'ingredients'
+    # description = 'description'
     recipe_list = arg.map do |hash|
-      recipe = Recipe.new(hash[id], hash[name], hash[ingredients])
+      recipe = Recipe.new(hash[id], hash[name], hash[ingredients]) #, hash[description])
       recipe
     end
     @recipe_list_obj = recipe_list
   end
+
+  def add_recipe
+    puts 'Enter name of recipe '
+    name = gets.chomp
+    puts "Enter a name of ingredients with use coma \",\""
+    ingredients = gets.chomp.split(", ")
+    puts 'Enter a description of the recipe'
+    description = gets.chomp
+    reciper = { 'name' => name, 'rname' => ingredients, 'descrip' => description }
+    # File.open(@file_name, "a") do |file|
+    #   file.write "#{hash_of_recipe} \n "
+    # end.
+    reciper.save_helper
+  end
 end
 
 DATA = RecipeStore.new
-
+# RECIPE = CreateRecipe.new
 

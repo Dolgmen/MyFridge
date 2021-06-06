@@ -4,7 +4,7 @@ require './Fridge.rb'
 
 
 class Search
-  def self.menu
+  def self.menu_of_search
     while true
       puts '1. Search by friedge'
       puts '2. Search by ingredients'
@@ -14,7 +14,7 @@ class Search
       user_input = gets.chomp
       case user_input
       when '0'
-        Menu.main
+        Menu_main.general_main
       when '1'
         Search.by($FRIDGE.ingredients.keys)
         puts ''

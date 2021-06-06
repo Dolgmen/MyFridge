@@ -8,34 +8,36 @@ class Fridge
     @file_name = 'fridge.json'
   end
 
-  def show_ingredients
+  def show_ingredients_fridge
     puts @ingredients
   end
 
-  def append(name, quantity)
+  def append_quantity(name, quantity)
     if @ingredients.has_key?(name)
       @ingredients[name] += quantity
     elsif @ingredients[name] = quantity
     end
   end
 
-  def to_json
+  def convert_to_json
     p @ingredients
     @ingredients.to_json
   end
 
-  def save
-    text = to_json
-    MyFile::File_.write(@file_name, text)
+  def save_fridge_file
+    text = convert_to_json
+    File_::FileHelper.write(@file_name, text)
   end
-  def load
+
+  def load_fridge_file
     begin
-      @ingredients = JSON.parse(MyFile::File_.read(@file_name))
+      @ingredients = JSON.parse(File_::FileHelper.read(@file_name))
     rescue
       @ingredients = {}
     end
   end
-  def self.menu
+
+  def self.menu_of_fridge
     while true
 
       puts '1. Add ingredient into a fridge'
@@ -47,24 +49,26 @@ class Fridge
       user_input = gets.chomp
       case user_input
       when '0'
-        $FRIDGE.save
-        Menu.main
+        $FRIDGE.save_fridge_file
+        Menu_main.general_main
       when '1'
-        add_ingredient
+        add_ingredient_fridge
       when '2'
-        $FRIDGE.show_ingredients
+        $FRIDGE.show_ingredients_fridge
       end
     end
   end
 
 end
-def add_ingredient
+
+def add_ingredient_fridge
   puts 'Enter a name of ingredient'
   name_input = gets.chomp
   puts 'Enter a quantity of ingredient'
   quantity_input = gets.chomp.to_f
-  $FRIDGE.append(name_input, quantity_input)
+  $FRIDGE.append_quantity(name_input, quantity_input)
 end
+
 $FRIDGE = Fridge.new
-$FRIDGE.load
+$FRIDGE.load_fridge_file
 

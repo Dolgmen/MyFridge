@@ -1,8 +1,8 @@
 load './Search.rb'
 require './Fridge.rb'
 
-class Menu
-  def self.main
+class Menu_main
+  def self.general_main
     while true
       puts '1. Recipe'
       puts '2. Fridge'
@@ -15,16 +15,16 @@ class Menu
       when '0'
         exit
       when '1'
-        main1
+        main_of_recipe
       when '2'
-        Fridge.menu
+        Fridge.menu_of_fridge
       when '3'
-        Search.menu
+        Search.menu_of_search
       end
     end
   end
 
-  def self.main1
+  def self.main_of_recipe
     while true
       puts '1. Show all'
       puts '2. Search by Name'
@@ -40,15 +40,15 @@ class Menu
       when '2'
         Search.by_name
       when '3'
-
+        DATA.add_recipe
       when '4'
 
       when '0'
-        main
+        Menu_main.general_main
       end
     end
   end
 end
 
 
-Menu.main
+Menu_main.general_main
