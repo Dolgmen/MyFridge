@@ -47,12 +47,12 @@ class Fridge
       user_input = gets.chomp
       case user_input
       when '0'
-        $FRIDGE.save
+        FRIDGE.save
         Menu.main
       when '1'
         add_ingredient
       when '2'
-        $FRIDGE.show_ingredients
+        FRIDGE.show_ingredients
       end
     end
   end
@@ -63,8 +63,8 @@ def add_ingredient
   name_input = gets.chomp
   puts 'Enter a quantity of ingredient'
   quantity_input = gets.chomp.to_f
-  $FRIDGE.append(name_input, quantity_input)
+  FRIDGE.append(name_input, quantity_input)
 end
-$FRIDGE = Fridge.new
-$FRIDGE.load
+FRIDGE = Fridge.new
+FRIDGE.load
 

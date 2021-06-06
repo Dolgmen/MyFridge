@@ -30,25 +30,31 @@ class Menu
       puts '2. Search by Name'
       puts '3. Create recipe'
       puts '4. Show Favorites'
-      puts '0. Back'
+      puts '5. Back'
 
       puts 'Enter a number '
       user_inputs = gets.chomp
       case user_inputs
       when '1'
         DATA.all_recipes.each { |recipe| puts "Recipe Name: #{recipe.name}, ID:#{recipe.id}" }
+        RecipeAct.id_from_user
       when '2'
         Search.by_name
+        RecipeAct.id_from_user
       when '3'
 
       when '4'
-
-      when '0'
+        DATA.all_recipes.each do |recipe|
+          if recipe.is_favorite == true
+            puts "Recipe Name: #{recipe.name}, ID:#{recipe.id}"
+          end
+        end
+        RecipeAct.id_from_user
+      when '5'
         main
       end
     end
   end
 end
-
 
 Menu.main
