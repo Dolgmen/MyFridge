@@ -42,7 +42,7 @@ class Menu
         Search.by_name
         RecipeAct.id_from_user
       when '3'
-
+        Recipe.add_recipe
       when '4'
         DATA.all_recipes.each do |recipe|
           if recipe.is_favorite == true

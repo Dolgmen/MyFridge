@@ -24,6 +24,18 @@ class Recipe
   def show_recipe
     puts "#{@id}, #{@name}, #{@ingredients}, #{@description}"
   end
+
+  def self.add_recipe
+    puts 'Enter name of recipe '
+    rname = gets.chomp
+    puts "Enter a name of ingredients with use coma \",\""
+    iname = gets.chomp.split(",")
+    puts 'Enter a description of the recipe'
+    description = gets.chomp
+    id = DATA.generate_id
+    recipe_from_user = { "id" => id, "name" => rname, "ingredients" => iname, "description" => description, "is_favorite" => false }
+    DATA.add_to_data(recipe_from_user)
+  end
 end
 
 class RecipeAct
@@ -33,6 +45,7 @@ class RecipeAct
     recipe_id_input = gets.chomp
     RecipeAct.with_recipe(recipe_id_input)
   end
+
   def self.with_recipe(recipe_id)
     recipe_id = recipe_id.to_i
     DATA.all_recipes[recipe_id - 1].show_recipe
@@ -63,12 +76,16 @@ class RecipeAct
 end
 
 class RecipeStore
-  attr_accessor :all_recipes, :recipe_list_hash
+  attr_accessor :recipe_list_hash, :recipe_list_obj
 
   def initialize
     @file_name = 'recipe.json'
     @recipe_list_hash = load_db_file
-    @all_recipes = hash_to_obj
+    @recipe_list_obj = hash_to_obj
+  end
+
+  def all_recipes
+    @recipe_list_obj
   end
 
   def generate_id
@@ -94,20 +111,20 @@ class RecipeStore
     recipe_list_hash
   end
 
-  def to_json
+  def list_to_json
     @recipe_list_hash = obj_to_hash(@recipe_list_obj)
     @recipe_list_hash.to_json
   end
 
   def save
-    text = to_json
+    text = list_to_json
     MyFile::File_.write(@file_name, text)
   end
 
   def add_to_data(hash)
-    @recipe_list_hash < hash
-    save
+    @recipe_list_hash << hash
     hash_to_obj
+    save
   end
 
   def delete_from_data
@@ -119,15 +136,14 @@ class RecipeStore
   end
 
   def hash_to_obj
-    arg = load_db_file
+    arg = @recipe_list_hash
     id = 'id'
     name = 'name'
     ingredients = 'ingredients'
     description = 'description'
     is_favorite = 'is_favorite'
     recipe_list = arg.map do |hash|
-      recipe = Recipe.new(hash[id], hash[name], hash[ingredients],hash[description], hash[is_favorite])
-      recipe
+      recipe = Recipe.new(hash[id], hash[name], hash[ingredients], hash[description], hash[is_favorite])
     end
     @recipe_list_obj = recipe_list
   end
