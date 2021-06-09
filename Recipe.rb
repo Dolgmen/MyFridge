@@ -14,11 +14,12 @@ class Recipe
   end
 
   def is_favorite_change
-    if @is_favorite == false
-      @is_favorite = true
-    else
-      @is_favorite = false
-    end
+    @is_favorite = !@is_favorite
+    # if @is_favorite == false
+    #   @is_favorite = true
+    # else
+    #   @is_favorite = false
+    # end
   end
 
   def show_recipe
@@ -43,7 +44,7 @@ class RecipeAct
     puts ''
     puts 'Puts Needed Recipe ID:'
     recipe_id_input = gets.chomp
-    RecipeAct.with_recipe(recipe_id_input)
+    with_recipe(recipe_id_input)
   end
 
   def self.with_recipe(recipe_id)
@@ -62,9 +63,10 @@ class RecipeAct
         DATA.save_halper
         puts('Added to favorites')
       when '2'
-        DATA.delete_from_data
+        DATA.delete_from_data(recipe_id)
         puts('Delete Recipe')
       when '0'
+        DATA.save_halper
         Menu_main.general_main
       end
     end
@@ -123,19 +125,16 @@ class RecipeStore
     save_halper
   end
 
-  def delete_from_data
-
+  def delete_from_data(id)
+    @recipe_list_hash.delete_if { |x| x['id'] == id }
+    hash_to_obj
+    save_halper
   end
 
   def hash_to_obj
     arg = @recipe_list_hash
-    id = 'id'
-    name = 'name'
-    ingredients = 'ingredients'
-    description = 'description'
-    is_favorite = 'is_favorite'
     recipe_list = arg.map do |hash|
-      recipe = Recipe.new(hash[id], hash[name], hash[ingredients], hash[description], hash[is_favorite])
+      recipe = Recipe.new(hash['id'], hash['name'], hash['ingredients'], hash['description'], hash['is_favorite'])
     end
     @recipe_list_obj = recipe_list
   end

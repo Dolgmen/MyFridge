@@ -15,7 +15,7 @@ class Menu_main
       when '0'
         exit
       when '1'
-        main_of_fridge
+        menu_of_recipe
       when '2'
         Fridge.menu_of_fridge
       when '3'
@@ -24,7 +24,7 @@ class Menu_main
     end
   end
 
-  def self.main_of_fridge
+  def self.menu_of_recipe
     while true
       puts '1. Show all'
       puts '2. Search by Name'
@@ -45,13 +45,15 @@ class Menu_main
         Recipe.add_recipe
       when '4'
         DATA.all_recipes.each do |recipe|
-          if recipe.is_favorite == true
+          if recipe.is_favorite
             puts "Recipe Name: #{recipe.name}, ID:#{recipe.id}"
           end
         end
         RecipeAct.id_from_user
       when '0'
         general_main
+      else
+        puts "Enter correct number"
       end
     end
   end
