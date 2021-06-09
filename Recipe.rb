@@ -14,15 +14,28 @@ class Recipe
   end
 
   def is_favorite_change
-    if @is_favorite == false
-      @is_favorite = true
-    else
-      @is_favorite = false
-    end
+    @is_favorite = !@is_favorite
+    # if @is_favorite == false
+    #   @is_favorite = true
+    # else
+    #   @is_favorite = false
+    # end
   end
 
   def show_recipe
     puts "#{@id}, #{@name}, #{@ingredients}, #{@description}"
+  end
+
+  def self.add_recipe
+    puts 'Enter name of recipe '
+    rname = gets.chomp
+    puts "Enter a name of ingredients with use coma \",\""
+    iname = gets.chomp.split(",")
+    puts 'Enter a description of the recipe'
+    description = gets.chomp
+    id = DATA.generate_id
+    recipe_from_user = { "id" => id, "name" => rname, "ingredients" => iname, "description" => description, "is_favorite" => false }
+    DATA.add_to_data(recipe_from_user)
   end
 end
 
@@ -31,15 +44,15 @@ class RecipeAct
     puts ''
     puts 'Puts Needed Recipe ID:'
     recipe_id_input = gets.chomp
-    RecipeAct.with_recipe(recipe_id_input)
+    with_recipe(recipe_id_input)
   end
+
   def self.with_recipe(recipe_id)
     recipe_id = recipe_id.to_i
     DATA.all_recipes[recipe_id - 1].show_recipe
     while true
       puts '1. Add to favorites'
-      puts '2. Edit recipe'
-      puts '3. Delete recipe'
+      puts '2. Delete recipe'
       puts '0. Back to main'
       puts ''
       puts 'Enter a number '
@@ -47,28 +60,30 @@ class RecipeAct
       case user_input
       when '1'
         DATA.all_recipes[recipe_id - 1].is_favorite_change
-        DATA.save
+        DATA.save_halper
         puts('Added to favorites')
       when '2'
-        #Має бути метод Recipe який редагує
-        puts('Edited recipe')
-      when '3'
-        DATA.delete_from_data
+        DATA.delete_from_data(recipe_id)
         puts('Delete Recipe')
       when '0'
-        Menu.main
+        DATA.save_halper
+        Menu_main.general_main
       end
     end
   end
 end
 
 class RecipeStore
-  attr_accessor :all_recipes, :recipe_list_hash
+  attr_accessor :recipe_list_hash, :recipe_list_obj
 
   def initialize
     @file_name = 'recipe.json'
     @recipe_list_hash = load_db_file
-    @all_recipes = hash_to_obj
+    @recipe_list_obj = hash_to_obj
+  end
+
+  def all_recipes
+    @recipe_list_obj
   end
 
   def generate_id
@@ -77,7 +92,7 @@ class RecipeStore
 
   def load_db_file
     begin
-      recipe_list_hash = JSON.parse(MyFile::File_.read(@file_name))
+      recipe_list_hash = JSON.parse(File_::File_Help.read(@file_name))
       recipe_list_hash
     rescue
       recipe_list_hash = {}
@@ -94,40 +109,32 @@ class RecipeStore
     recipe_list_hash
   end
 
-  def to_json
+  def list_to_json
     @recipe_list_hash = obj_to_hash(@recipe_list_obj)
     @recipe_list_hash.to_json
   end
 
-  def save
-    text = to_json
-    MyFile::File_.write(@file_name, text)
+  def save_halper
+    text = list_to_json
+    File_::File_Help.write(@file_name, text)
   end
 
   def add_to_data(hash)
-    @recipe_list_hash < hash
-    save
+    @recipe_list_hash << hash
     hash_to_obj
+    save_halper
   end
 
-  def delete_from_data
-    #Видаляє рецепт з файлика
-  end
-
-  def edit_recipe
-    #Редагування
+  def delete_from_data(id)
+    @recipe_list_hash.delete_if { |x| x['id'] == id }
+    hash_to_obj
+    save_halper
   end
 
   def hash_to_obj
-    arg = load_db_file
-    id = 'id'
-    name = 'name'
-    ingredients = 'ingredients'
-    description = 'description'
-    is_favorite = 'is_favorite'
+    arg = @recipe_list_hash
     recipe_list = arg.map do |hash|
-      recipe = Recipe.new(hash[id], hash[name], hash[ingredients],hash[description], hash[is_favorite])
-      recipe
+      recipe = Recipe.new(hash['id'], hash['name'], hash['ingredients'], hash['description'], hash['is_favorite'])
     end
     @recipe_list_obj = recipe_list
   end

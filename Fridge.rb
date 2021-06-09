@@ -24,18 +24,20 @@ class Fridge
     @ingredients.to_json
   end
 
-  def save
+  def save_fridge
     text = to_json
-    MyFile::File_.write(@file_name, text)
+    File_::File_Help.write(@file_name, text)
   end
+
   def load
     begin
-      @ingredients = JSON.parse(MyFile::File_.read(@file_name))
+      @ingredients = JSON.parse(File_::File_Help.read(@file_name))
     rescue
       @ingredients = {}
     end
   end
-  def self.menu
+
+  def self.menu_of_fridge
     while true
 
       puts '1. Add ingredient into a fridge'
@@ -47,8 +49,8 @@ class Fridge
       user_input = gets.chomp
       case user_input
       when '0'
-        FRIDGE.save
-        Menu.main
+        FRIDGE.save_fridge
+        Menu_main.general_main
       when '1'
         add_ingredient
       when '2'
@@ -58,6 +60,7 @@ class Fridge
   end
 
 end
+
 def add_ingredient
   puts 'Enter a name of ingredient'
   name_input = gets.chomp
@@ -65,6 +68,7 @@ def add_ingredient
   quantity_input = gets.chomp.to_f
   FRIDGE.append(name_input, quantity_input)
 end
+
 FRIDGE = Fridge.new
 FRIDGE.load
 
