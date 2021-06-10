@@ -3,136 +3,62 @@ require 'json'
 require './file'
 
 class Recipe
-  attr_accessor :id, :name, :ingredients, :description, :is_favorite
+  attr_accessor :id, :name, :ingredients, :description, :favorite
 
-  def initialize (id = '00', name = 'default_name', ingredients = ['default'], description = 'default', is_favorite = false)
+  def initialize (id = '00', name = 'default_name', ingredients = ['default'], description = 'default', favorite = false)
     @id = id
     @name = name
     @ingredients = ingredients
     @description = description
-    @is_favorite = is_favorite
+    @favorite = favorite
   end
 
-  def is_favorite_change
-    if @is_favorite == false
-      @is_favorite = true
-    else
-      @is_favorite = false
-    end
+  def favorite_change
+    @favorite = !@favorite
   end
 
   def show_recipe
     puts "#{@id}, #{@name}, #{@ingredients}, #{@description}"
   end
-end
 
-class RecipeAct
-  def self.id_from_user
-    puts ''
-    puts 'Puts Needed Recipe ID:'
-    recipe_id_input = gets.chomp
-    RecipeAct.with_recipe(recipe_id_input)
+  def self.add_recipe
+    puts 'Enter name of recipe '
+    rname = gets.chomp
+    puts "Enter a name of ingredients with use coma \",\""
+    iname = gets.chomp.split(",")
+    puts 'Enter a description of the recipe'
+    description = gets.chomp
+    id = DATA.generate_id
+    recipe_from_user = { "id" => id, "name" => rname, "ingredients" => iname, "description" => description, "favorite" => false }
+    DATA.add_to_data(recipe_from_user)
   end
-  def self.with_recipe(recipe_id)
-    recipe_id = recipe_id.to_i
-    DATA.all_recipes[recipe_id - 1].show_recipe
+
+  def self.menu
     while true
-      puts '1. Add to favorites'
-      puts '2. Edit recipe'
-      puts '3. Delete recipe'
-      puts '0. Back to main'
-      puts ''
+      puts '1. Show all'
+      puts '2. Search by Name'
+      puts '3. Create recipe'
+      puts '4. Show Favorites'
+      puts '0. Back'
+
       puts 'Enter a number '
-      user_input = gets.chomp
-      case user_input
+      user_inputs = gets.chomp
+      case user_inputs
       when '1'
-        DATA.all_recipes[recipe_id - 1].is_favorite_change
-        DATA.save
-        puts('Added to favorites')
+        DATA.all_recipes.each { |recipe| puts "Recipe Name: #{recipe.name}, ID:#{recipe.id}" }
+        RecipeAct.id_from_user
       when '2'
-        #Має бути метод Recipe який редагує
-        puts('Edited recipe')
+        Search.by_name
+        RecipeAct.id_from_user
       when '3'
-        DATA.delete_from_data
-        puts('Delete Recipe')
+        Recipe.add_recipe
+      when '4'
+        RecipeAct.show_favorites
       when '0'
-        Menu.main
+        Menu_main.main
+      else
+        Menu_main.error_text
       end
     end
   end
 end
-
-class RecipeStore
-  attr_accessor :all_recipes, :recipe_list_hash
-
-  def initialize
-    @file_name = 'recipe.json'
-    @recipe_list_hash = load_db_file
-    @all_recipes = hash_to_obj
-  end
-
-  def generate_id
-    @recipe_list_obj.count + 1
-  end
-
-  def load_db_file
-    begin
-      recipe_list_hash = JSON.parse(MyFile::File_.read(@file_name))
-      recipe_list_hash
-    rescue
-      recipe_list_hash = {}
-      recipe_list_hash
-    end
-  end
-
-  def obj_to_hash(obj_list)
-    recipe_list_hash = obj_list.map do |object|
-      hash = {}
-      object.instance_variables.each { |var| hash[var.to_s.delete("@")] = object.instance_variable_get(var) }
-      hash
-    end
-    recipe_list_hash
-  end
-
-  def to_json
-    @recipe_list_hash = obj_to_hash(@recipe_list_obj)
-    @recipe_list_hash.to_json
-  end
-
-  def save
-    text = to_json
-    MyFile::File_.write(@file_name, text)
-  end
-
-  def add_to_data(hash)
-    @recipe_list_hash < hash
-    save
-    hash_to_obj
-  end
-
-  def delete_from_data
-    #Видаляє рецепт з файлика
-  end
-
-  def edit_recipe
-    #Редагування
-  end
-
-  def hash_to_obj
-    arg = load_db_file
-    id = 'id'
-    name = 'name'
-    ingredients = 'ingredients'
-    description = 'description'
-    is_favorite = 'is_favorite'
-    recipe_list = arg.map do |hash|
-      recipe = Recipe.new(hash[id], hash[name], hash[ingredients],hash[description], hash[is_favorite])
-      recipe
-    end
-    @recipe_list_obj = recipe_list
-  end
-end
-
-DATA = RecipeStore.new
-
-

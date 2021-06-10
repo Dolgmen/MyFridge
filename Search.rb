@@ -6,6 +6,7 @@ class Search
     while true
       puts '1. Search by friedge'
       puts '2. Search by ingredients'
+      puts '0. Back'
       puts ''
       puts 'Enter a number '
       user_input = gets.chomp
@@ -16,6 +17,10 @@ class Search
       when '2'
         Search.by(Search.ingredients_input)
         RecipeAct.id_from_user
+      when '0'
+        Menu_main.main
+      else
+        Menu_main.error_text
       end
     end
   end

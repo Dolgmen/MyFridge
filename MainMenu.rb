@@ -1,7 +1,9 @@
 load './Search.rb'
 require './Fridge.rb'
+require './recipe_act.rb'
+require './recipe_store.rb'
 
-class Menu
+class Menu_main
   def self.main
     while true
       puts '1. Recipe'
@@ -15,46 +17,21 @@ class Menu
       when '0'
         exit
       when '1'
-        main1
+        Recipe.menu
       when '2'
         Fridge.menu
       when '3'
         Search.menu
+      else
+        error_text
       end
     end
   end
-
-  def self.main1
-    while true
-      puts '1. Show all'
-      puts '2. Search by Name'
-      puts '3. Create recipe'
-      puts '4. Show Favorites'
-      puts '5. Back'
-
-      puts 'Enter a number '
-      user_inputs = gets.chomp
-      case user_inputs
-      when '1'
-        DATA.all_recipes.each { |recipe| puts "Recipe Name: #{recipe.name}, ID:#{recipe.id}" }
-        RecipeAct.id_from_user
-      when '2'
-        Search.by_name
-        RecipeAct.id_from_user
-      when '3'
-
-      when '4'
-        DATA.all_recipes.each do |recipe|
-          if recipe.is_favorite == true
-            puts "Recipe Name: #{recipe.name}, ID:#{recipe.id}"
-          end
-        end
-        RecipeAct.id_from_user
-      when '5'
-        main
-      end
-    end
+  def self.error_text
+    puts "*" * 24
+    puts format("| %12s | ",  "Enter correct number" )
+    puts "*" * 24
   end
 end
 
-Menu.main
+Menu_main.main
