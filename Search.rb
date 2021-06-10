@@ -2,7 +2,7 @@ load './Recipe.rb'
 require './Fridge.rb'
 
 class Search
-  def self.menu_of_search
+  def self.menu
     while true
       puts '1. Search by friedge'
       puts '2. Search by ingredients'
@@ -18,7 +18,9 @@ class Search
         Search.by(Search.ingredients_input)
         RecipeAct.id_from_user
       when '0'
-        Menu_main.general_main
+        Menu_main.main
+      else
+        Menu_main.error_text
       end
     end
   end

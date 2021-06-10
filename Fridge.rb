@@ -37,7 +37,7 @@ class Fridge
     end
   end
 
-  def self.menu_of_fridge
+  def self.menu
     while true
 
       puts '1. Add ingredient into a fridge'
@@ -50,11 +50,13 @@ class Fridge
       case user_input
       when '0'
         FRIDGE.save_fridge
-        Menu_main.general_main
+        Menu_main.main
       when '1'
         add_ingredient
       when '2'
         FRIDGE.show_ingredients
+      else
+        Menu_main.error_text
       end
     end
   end
