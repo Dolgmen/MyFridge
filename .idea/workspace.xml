@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d584c74-45fd-4b2f-a939-ec663368bb44" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainMenu.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recipe.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Recipe.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe.json" beforeDir="false" afterPath="$PROJECT_DIR$/recipe.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test.rb" afterDir="false" />
-    </list>
+    <list default="true" id="1d584c74-45fd-4b2f-a939-ec663368bb44" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +104,7 @@
     </configuration>
     <configuration name="del" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/../../project1" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$USER_HOME$/project1" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
       <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
@@ -123,7 +116,7 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/../../project1/del.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$USER_HOME$/project1/del.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
@@ -180,6 +173,7 @@
       <workItem from="1623212856720" duration="3116000" />
       <workItem from="1623245130211" duration="1657000" />
       <workItem from="1623260226191" duration="787000" />
+      <workItem from="1623286535793" duration="28000" />
     </task>
     <servers />
   </component>
@@ -190,10 +184,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MainMenu_rb@del.rcov" NAME="del Coverage Results" MODIFIED="1623215604941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../project1" />
+    <SUITE FILE_PATH="coverage/MainMenu_rb@del.rcov" NAME="del Coverage Results" MODIFIED="1623215604941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/project1" />
     <SUITE FILE_PATH="coverage/MainMenu_rb@Search.rcov" NAME="Search Coverage Results" MODIFIED="1621774341028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
     <SUITE FILE_PATH="coverage/Search_rb@MainMenu.rcov" NAME="MainMenu Coverage Results" MODIFIED="1623260289411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Recipe_rb@del.rcov" NAME="del Coverage Results" MODIFIED="1623182823614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../project1" />
+    <SUITE FILE_PATH="coverage/Recipe_rb@del.rcov" NAME="del Coverage Results" MODIFIED="1623182823614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/project1" />
     <SUITE FILE_PATH="coverage/MyFriedge@Recipe.rcov" NAME="Recipe Coverage Results" MODIFIED="1621522253636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
     <SUITE FILE_PATH="coverage/MainMenu_rb@MainMenu.rcov" NAME="MainMenu Coverage Results" MODIFIED="1623213809908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyFriedge@test.rcov" NAME="test Coverage Results" MODIFIED="1621517099784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
@@ -202,9 +196,9 @@
     <SUITE FILE_PATH="coverage/MainMenu_rb@Recipe.rcov" NAME="Recipe Coverage Results" MODIFIED="1623096115391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MainMenu_rb@test.rcov" NAME="test Coverage Results" MODIFIED="1623215644572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyFriedge@Search.rcov" NAME="Search Coverage Results" MODIFIED="1621252049594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyFriedge" />
-    <SUITE FILE_PATH="coverage/Search_rb@del.rcov" NAME="del Coverage Results" MODIFIED="1623245985272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../project1" />
+    <SUITE FILE_PATH="coverage/Search_rb@del.rcov" NAME="del Coverage Results" MODIFIED="1623245985272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/project1" />
     <SUITE FILE_PATH="coverage/Search_rb@Recipe.rcov" NAME="Recipe Coverage Results" MODIFIED="1623260407845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MainMenu_rb@MainMenu__1_.rcov" NAME="MainMenu (1) Coverage Results" MODIFIED="1621848342169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../MyFriedge" MODULE_NAME="MyFriedge" />
+    <SUITE FILE_PATH="coverage/MainMenu_rb@MainMenu__1_.rcov" NAME="MainMenu (1) Coverage Results" MODIFIED="1621848342169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/MyFriedge" MODULE_NAME="MyFriedge" />
     <SUITE FILE_PATH="coverage/Recipe_rb@Recipe.rcov" NAME="Recipe Coverage Results" MODIFIED="1623182869009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
