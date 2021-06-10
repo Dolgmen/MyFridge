@@ -1,5 +1,6 @@
 load './Search.rb'
 require './Fridge.rb'
+require './recipe_act.rb'
 
 class Menu_main
   def self.general_main
